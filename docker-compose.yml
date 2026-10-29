@@ -1,4 +1,9 @@
-version: '3'
+version: '3.8'
 services:
   tgbot:
-    image: testbot:latest
+    build: .
+    image: nulp-schedulebot:latest
+    restart: unless-stopped
+    env_file:
+      - .env
+
